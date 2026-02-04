@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexus Skill Academy - Master Digital Marketing, AI, Freelancing & Web Development. Affordable courses with verified certificates. 99 scholarships available!">
+  <meta name="keywords" content="online courses, digital marketing, AI, freelancing, web development, Pakistan, affordable education">
+  <meta name="author" content="Nexus Skill Academy">
+  <title>Nexus Skill Academy - Master Digital Skills & Launch Your Career</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    html { 
+      scroll-behavior: smooth; 
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: #0f172a; 
+      color: #1e293b; 
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    a { 
+      text-decoration: none; 
+      color: inherit; 
+    }
+    
+    img { 
+      max-width: 100%; 
+      display: block; 
+    }
+    
+    button { 
+      cursor: pointer; 
+      border: none; 
+      font-family: inherit;
+    }
+    
+    :root {
+      --primary: #0ea5e9;
+      --secondary: #f97316;
+      --accent: #8b5cf6;
+      --success: #10b981;
+      --dark: #0f172a;
+      --dark-lighter: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #cbd5e1;
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    /* Navigation */
+    nav { 
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 1.2rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo i {
+      font-size: 2.2rem;
+      color: #0ea5e9;
+      filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.5));
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    
+    nav a {
+      color: #e2e8f0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after { 
+      width: 100%; 
+    }
+    
+    nav a:hover { 
+      color: #0ea5e9; 
+    }
+    
+    .cta-nav {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: white !important;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+    }
+    
+    .cta-nav::after {
+      display: none;
+    }
+    
+    .cta-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+      background: linear-gradient(135deg, #fb923c, #f97316);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(30, 41, 59, 0.95) 100%);
+      padding: 7rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 10s ease-in-out infinite reverse;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      color: #0ea5e9;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.6s ease;
+    }
+    
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #f8fafc;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      color: #cbd5e1;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(14, 165, 233, 0.5);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #0ea5e9;
+      color: #0ea5e9;
+      padding: 0.9rem 2.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 1.05rem;
+    }
+    
+    .btn-secondary:hover {
+      background: #0ea5e9;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      padding: 3.5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: -4rem auto 0;
+      position: relative;
+      z-index: 10;
+      border-radius: 20px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+    
+    .stat-item::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: rgba(14, 165, 233, 0.2);
+    }
+    
+    .stat-item:last-child::after {
+      display: none;
+    }
+    
+    .stat-item i {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
+    }
+    
+    .stat-item h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      color: #0ea5e9;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    
+    .stat-item p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Video Demo Section */
+    .video-demo {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    
+    .video-demo .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .video-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(14, 165, 233, 0.3);
+      background: #000;
+    }
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Features Section */
+    .features {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      padding: 6rem 2rem;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .section-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+    
+    .section-header p {
+      color: #cbd5e1;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 16px;
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      transition: all 0.4s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .feature-card:hover {
+      border-color: rgba(14, 165, 233, 0.5);
+      transform: translateY(-10px);
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 25px 50px rgba(14, 165, 233, 0.25);
+    }
+    
+    .feature-card i {
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    
+    .feature-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .feature-card p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* Courses Section */
+    .courses {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      padding: 6rem 2rem;
+    }
+    
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    
+    .course-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.4));
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #0ea5e9, #8b5cf6, #ec4899);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    
+    .course-card:hover::before { 
+      transform: scaleX(1); 
+    }
+    
+    .course-card:hover {
+      border-color: rgba(14, 165, 233, 0.5);
+      transform: translateY(-12px);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
+      box-shadow: 0 30px 60px rgba(14, 165, 233, 0.2);
+    }
+    
+    .course-icon {
+      font-size: 3rem;
+      color: #f97316;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5));
+    }
+    
+    .course-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .course-card p {
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      min-height: 80px;
+      font-size: 1rem;
+    }
+    
+    .course-details {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .course-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .course-detail-item i {
+      color: #0ea5e9;
+      font-size: 1rem;
+    }
+    
+    .course-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(14, 165, 233, 0.2);
+    }
+    
+    .price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f97316;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    
+    .price-currency {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    
+    .course-btn {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 5px 20px rgba(249, 115, 22, 0.3);
+    }
+    
+    .course-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+    }
+
+    /* Scholarship Section */
+    .scholarship {
+      background: linear-gradient(135deg, #065f46, #047857, #059669);
+      padding: 5rem 2rem;
+      border-radius: 20px;
+      margin: 4rem 2rem;
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .scholarship::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 6s ease-in-out infinite;
+    }
+    
+    .scholarship::after {
+      content: '🎓';
+      position: absolute;
+      font-size: 15rem;
+      opacity: 0.05;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .scholarship h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.5px;
+    }
+    
+    .scholarship p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .scholarship-highlight {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .scholarship-highlight h3 {
+      color: #fef3c7;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .scholarship-highlight p {
+      color: white;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    
+    .scholarship .btn-primary {
+      background: white;
+      color: #065f46;
+      position: relative;
+      z-index: 1;
+      font-size: 1.1rem;
+      padding: 1.1rem 3rem;
+    }
+    
+    .scholarship .btn-primary:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* Process Section */
+    .process {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      padding: 6rem 2rem;
+    }
+    
+    .process-steps {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+    }
+    
+    .process-step {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      padding: 3rem;
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+    }
+    
+    .process-step:hover {
+      border-color: rgba(14, 165, 233, 0.5);
+      transform: translateY(-10px);
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 20px 50px rgba(14, 165, 233, 0.2);
+    }
+    
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+    }
+    
+    .process-step h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .process-step p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+      padding: 6rem 2rem;
+    }
+    
+    .testimonial-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .testimonial-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.4s;
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '★★★★★';
+      display: block;
+      color: #f97316;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 3px;
+    }
+    
+    .testimonial-card:hover {
+      border-color: rgba(14, 165, 233, 0.5);
+      transform: translateY(-10px);
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 25px 50px rgba(14, 165, 233, 0.2);
+    }
+    
+    .testimonial-text {
+      color: #cbd5e1;
+      font-style: italic;
+      margin-bottom: 2rem;
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+    }
+    
+    .author-info h4 {
+      color: #f8fafc;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+    
+    .author-info p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Final CTA */
+    .cta-final {
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #ec4899);
+      padding: 5rem 2rem;
+      border-radius: 20px;
+      margin: 4rem 2rem;
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(14, 165, 233, 0.4);
+    }
+    
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    .cta-final h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.5px;
+    }
+    
+    .cta-final p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      opacity: 0.95;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-final .btn-primary {
+      background: white;
+      color: #0ea5e9;
+      position: relative;
+      z-index: 1;
+      font-size: 1.15rem;
+      padding: 1.2rem 3rem;
+    }
+    
+    .cta-final .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      border-top: 1px solid rgba(14, 165, 233, 0.2);
+      color: #cbd5e1;
+      padding: 4rem 2rem 2rem;
+    }
+    
+    .footer-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      color: #f8fafc;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+    }
+    
+    .footer-col p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-col a {
+      display: block;
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #cbd5e1;
+      transition: color 0.3s, padding-left 0.3s;
+      padding: 0.3rem 0;
+    }
+    
+    .footer-col a:hover {
+      color: #0ea5e9;
+      padding-left: 0.5rem;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      color: #0ea5e9;
+      padding: 0;
+    }
+    
+    .social-icons a:hover {
+      background: #0ea5e9;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(14, 165, 233, 0.2);
+      font-size: 0.9rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.8rem;
+      color: #94a3b8;
+    }
+    
+    .footer-bottom a {
+      color: #cbd5e1;
+      margin: 0 0.5rem;
+      transition: color 0.3s;
+    }
+    
+    .footer-bottom a:hover {
+      color: #0ea5e9;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 999;
+      box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+    }
+    
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+      .section-header h2 { font-size: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+      
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-top: 1px solid rgba(14, 165, 233, 0.2);
+      }
+      
+      nav ul.active {
+        display: flex;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .logo i {
+        font-size: 1.7rem;
+      }
+      
+      .hero {
+        padding: 4rem 1.5rem 3rem;
+        min-height: 75vh;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.05rem;
+      }
+      
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        margin: -2rem 1rem 0;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .stat-item::after {
+        display: none;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .section-header p {
+        font-size: 1rem;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .features-grid,
+      .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .course-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      
+      .course-btn {
+        width: 100%;
+      }
+      
+      .scholarship,
+      .cta-final {
+        margin: 3rem 1rem;
+        padding: 3rem 1.5rem;
+      }
+      
+      .scholarship h2,
+      .cta-final h2 {
+        font-size: 2rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .scroll-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .stat-item h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <a href="#home" class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Nexus Academy</span>
+    </a>
+    <button class="mobile-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul id="navMenu">
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#scholarship">Scholarships</a></li>
+      <li><a href="#contact" class="cta-nav">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-award"></i> 10,000+ Students Enrolled
+    </div>
+    <h1>Master <span class="gradient">In-Demand Skills</span> & Build Your Online Career</h1>
+    <p>Learn from industry experts. Get verified certificates. Launch your freelance career with practical, hands-on courses designed for real-world success.</p>
+    <div class="btn-group">
+      <a href="#courses" class="btn-primary">
+        <i class="fas fa-rocket"></i> Explore Courses
+      </a>
+      <a href="#demo" class="btn-secondary">
+        <i class="fas fa-play-circle"></i> Watch Demo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="stat-item">
+    <i class="fas fa-users"></i>
+    <h3>10K+</h3>
+    <p>Students Enrolled</p>
+  </div>
+  <div class="stat-item">
+    <i class="fas fa-award"></i>
+    <h3>99</h3>
+    <p>Scholarships Available</p>
+  </div>
+  <div class="stat-item">
+    <i class="fas fa-book"></i>
+    <h3>6</h3>
+    <p>Expert Courses</p>
+  </div>
+  <div class="stat-item">
+    <i class="fas fa-star"></i>
+    <h3>95%</h3>
+    <p>Student Satisfaction</p>
+  </div>
+</section>
+
+<!-- Video Demo Section -->
+<section class="video-demo" id="demo">
+  <div class="section-header">
+    <h2>See How It Works</h2>
+    <p>Watch our course preview and discover how Nexus Academy can transform your career in just a few weeks</p>
+  </div>
+  <div class="video-container">
+    <div class="video-wrapper">
+      <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+      <iframe 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" 
+        title="Nexus Skill Academy Course Demo" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="section-header">
+    <h2>Why Choose Nexus?</h2>
+    <p>Everything you need to succeed in your online career journey</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fas fa-star"></i>
+      <h3>Expert Instructors</h3>
+      <p>Learn from industry professionals with real-world experience in digital marketing, AI, and freelancing. Our instructors have helped thousands launch successful careers.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-certificate"></i>
+      <h3>Verified Certificates</h3>
+      <p>Get recognized credentials that boost your portfolio and impress potential clients worldwide. Our certificates are respected across the industry.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-clock"></i>
+      <h3>Lifetime Access</h3>
+      <p>Learn at your own pace with unlimited access to course materials, updates, and resources forever. No time limits, no pressure.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-headset"></i>
+      <h3>24/7 Support</h3>
+      <p>Get help whenever you need it with our dedicated support team always ready to assist you through your learning journey.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-laptop"></i>
+      <h3>Hands-On Projects</h3>
+      <p>Build real projects that you can showcase to clients and employers on your portfolio. Learn by doing, not just watching.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-rocket"></i>
+      <h3>Career Growth</h3>
+      <p>Join a community of successful freelancers earning high income through skills you'll learn. Transform your career trajectory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Courses Section -->
+<section class="courses" id="courses">
+  <div class="section-header">
+    <h2>Our Courses</h2>
+    <p>Choose from industry-leading courses designed for beginners and professionals</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Digital Marketing Mastery</h3>
+      <p>Master SEO, social media marketing, paid advertising, email campaigns, and advanced analytics to grow businesses online and attract high-paying clients.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>40+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>120+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>15 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('Digital Marketing')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-robot"></i></div>
+      <h3>AI for Beginners</h3>
+      <p>Learn practical AI tools and automation systems to enhance productivity, streamline workflows, and save countless hours on repetitive tasks.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>30+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>90+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>12 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('AI for Beginners')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-pen-fancy"></i></div>
+      <h3>Prompt Engineering Pro</h3>
+      <p>Craft professional-grade prompts for AI tools to unlock advanced capabilities and maximize AI productivity exponentially across all industries.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>25+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>75+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>10 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('Prompt Engineering')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-cogs"></i></div>
+      <h3>AI Automation Expert</h3>
+      <p>Automate repetitive tasks using cutting-edge AI tools and create powerful workflows that save time, reduce costs, and increase efficiency.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>35+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>100+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>18 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('AI Automation')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-briefcase"></i></div>
+      <h3>Freelancing Mastery</h3>
+      <p>Build a successful freelance career on Upwork, Fiverr, and direct clients. Master pricing strategies, pitching, client management, and scaling your business.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>45+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>130+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>20 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('Freelancing Mastery')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-icon"><i class="fas fa-globe"></i></div>
+      <h3>WordPress Web Development</h3>
+      <p>Create professional websites without coding. Learn WordPress, AI-powered design tools, plugins, themes, and industry best practices for stunning results.</p>
+      <div class="course-details">
+        <div class="course-detail-item">
+          <i class="fas fa-clock"></i>
+          <span>38+ Hours</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-video"></i>
+          <span>110+ Lessons</span>
+        </div>
+        <div class="course-detail-item">
+          <i class="fas fa-tasks"></i>
+          <span>16 Projects</span>
+        </div>
+      </div>
+      <div class="course-footer">
+        <div class="price">
+          <span class="price-currency">PKR</span>999
+        </div>
+        <button class="course-btn" onclick="enrollCourse('WordPress Development')">
+          <i class="fas fa-shopping-cart"></i> Enroll Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scholarship Section -->
+<section class="scholarship" id="scholarship">
+  <h2>🎓 Limited Scholarship Program</h2>
+  <p>We believe education should be accessible to everyone with passion and dedication. That's why we're offering full scholarships to motivated students who can't afford the course fee.</p>
+  <div class="scholarship-highlight">
+    <h3>Only 99</h3>
+    <p>Full Scholarships Available</p>
+  </div>
+  <p><strong>What You Get:</strong> Complete course access • Lifetime materials • Verified certificate • Premium support • Community access</p>
+  <button class="btn-primary" onclick="applyScholarship()">
+    <i class="fas fa-graduation-cap"></i> Apply for Scholarship
+  </button>
+</section>
+
+<!-- Process Section -->
+<section class="process" id="process">
+  <div class="section-header">
+    <h2>How It Works</h2>
+    <p>Simple, transparent, and straightforward process to get started</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <h3>Choose & Enroll</h3>
+      <p>Select your desired course from our expert-crafted curriculum and enroll for just PKR 999 to get instant access to all course materials, resources, and community.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <h3>Learn & Practice</h3>
+      <p>Study premium video content, complete hands-on assignments, take interactive quizzes, and learn from industry experts at your own comfortable pace.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <h3>Earn Certificate</h3>
+      <p>Complete the course and earn a professional certificate that validates your skills and significantly boosts your career prospects with employers and clients worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <h2>Success Stories</h2>
+    <p>Join thousands of students who transformed their careers with our courses</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-text">"Nexus completely transformed my career trajectory. I went from zero online presence to landing my first freelance client within just 3 weeks. The course content is practical, actionable, and results-driven. Highly recommended!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <h4>Ali Khan</h4>
+          <p>Digital Marketer • Karachi, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"The courses are incredibly well-structured and super easy to follow even for beginners. I earned my certificate in Digital Marketing and now work as a specialist earning great income. Best investment I've made!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">SA</div>
+        <div class="author-info">
+          <h4>Sana Ahmad</h4>
+          <p>Marketing Specialist • Lahore, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"I learned AI automation and freelancing at a price anyone can afford. Now I'm making passive income while building my online business. The ROI has been absolutely amazing. Thank you Nexus!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">HM</div>
+        <div class="author-info">
+          <h4>Hamza Malik</h4>
+          <p>Freelance AI Specialist • Islamabad, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"The instructors are true experts in their field. I feel very confident in my new skills and the knowledge gained is truly industry-relevant. The hands-on projects made all the difference. Worth every penny!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">FA</div>
+        <div class="author-info">
+          <h4>Fatima Ahmed</h4>
+          <p>WordPress Developer • Rawalpindi, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"I've taken multiple courses from Nexus and each one exceeded my expectations. The certification actually helped me get hired by a premium marketing agency. The support team is also incredibly responsive!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">HR</div>
+        <div class="author-info">
+          <h4>Hassan Raza</h4>
+          <p>Agency Employee • Multan, Pakistan</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">"The scholarship program gave me an opportunity I never had before. Now I'm successfully freelancing on Upwork and helping my family financially. Forever grateful to Nexus for believing in students like me!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">UF</div>
+        <div class="author-info">
+          <h4>Usman Farooq</h4>
+          <p>Freelancer • Peshawar, Pakistan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final">
+  <h2>🚀 Ready to Launch Your Career?</h2>
+  <p>Join thousands of students building successful careers in digital marketing, AI, and freelancing. Start your transformation today and unlock your potential!</p>
+  <button class="btn-primary" onclick="scrollToCourses()">
+    <i class="fas fa-rocket"></i> Get Started Now
+  </button>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>About Nexus Academy</h3>
+      <p>Nexus Skill Academy is dedicated to providing affordable, high-quality online education in digital skills, AI, and modern technologies to empower learners worldwide and help them achieve their career goals.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" title="Instagram" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" title="YouTube" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" title="Twitter" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="#courses">Browse All Courses</a>
+      <a href="#process">How It Works</a>
+      <a href="#scholarship">Scholarship Program</a>
+      <a href="#testimonials">Success Stories</a>
+      <a href="#demo">Watch Demo Video</a>
+      <a href="#contact">Contact Support</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Our Courses</h3>
+      <a href="#courses">Digital Marketing Mastery</a>
+      <a href="#courses">AI for Beginners</a>
+      <a href="#courses">Prompt Engineering Pro</a>
+      <a href="#courses">AI Automation Expert</a>
+      <a href="#courses">Freelancing Mastery</a>
+      <a href="#courses">WordPress Development</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Information</h3>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br>help@nexusskill.academy</p>
+      <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br>+92-300-1234567</p>
+      <p><i class="fas fa-clock"></i> <strong>Support Hours:</strong><br>Monday - Friday<br>9:00 AM - 6:00 PM PKT</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong><br>Karachi, Pakistan</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Nexus Skill Academy. All rights reserved.</p>
+    <p>
+      <a href="#privacy">Privacy Policy</a> | 
+      <a href="#terms">Terms of Service</a> | 
+      <a href="#refund">Refund Policy</a> |
+      <a href="#faq">FAQ</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // Mobile Menu Toggle
+  function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+  }
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Scroll to Top Button
+  const scrollTopBtn = document.getElementById('scrollTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Enroll Course Function
+  function enrollCourse(courseName) {
+    alert(`Thank you for your interest in ${courseName}!\n\nYou will be redirected to the enrollment page.\n\nCourse Fee: PKR 999\n\nFor now, please contact us at:\nEmail: help@nexusskill.academy\nPhone: +92-300-1234567`);
+    // In production, redirect to actual enrollment page
+    // window.location.href = '/enroll?course=' + encodeURIComponent(courseName);
+  }
+
+  // Apply Scholarship Function
+  function applyScholarship() {
+    alert(`Scholarship Application\n\nThank you for applying to our scholarship program!\n\nPlease send the following to help@nexusskill.academy:\n\n1. Your full name\n2. Course you want to enroll in\n3. Brief explanation (100-200 words) of why you need this scholarship\n4. Your career goals\n\nWe review applications weekly and will respond within 5-7 business days.`);
+    // In production, redirect to actual scholarship application form
+    // window.location.href = '/scholarship-application';
+  }
+
+  // Scroll to Courses Function
+  function scrollToCourses() {
+    const coursesSection = document.getElementById('courses');
+    if (coursesSection) {
+      coursesSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+
+  // Add animation on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards for animation
+  document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .process-step').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+</script>
+
+</body>
+</html>
