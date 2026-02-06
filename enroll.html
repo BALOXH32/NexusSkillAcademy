@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enroll Now | NexusSkillAcademy - Start Your Journey</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 50%, #f0f4ff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.2rem 2rem;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 1.5rem;
+    }
+
+    nav a:hover {
+      color: #00d4ff;
+      transform: translateX(-5px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      padding: 60px 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    /* Main Content */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin: 4rem 0;
+      padding: 2rem 0;
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(100, 200, 255, 0.1);
+    }
+
+    .benefits-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(107, 92, 255, 0.05) 100%);
+      border-radius: 12px;
+      border-left: 3px solid #00d4ff;
+      transition: all 0.3s;
+    }
+
+    .benefit-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .benefit-text h3 {
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .benefit-text p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Form Section */
+    .form-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(100, 200, 255, 0.1);
+      position: sticky;
+      top: 120px;
+    }
+
+    .form-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .form-subtitle {
+      color: #00d4ff;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 1.2rem;
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s;
+      background: #fafbff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    }
+
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+
+    .course-display {
+      padding: 1.2rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(107, 92, 255, 0.08) 100%);
+      border-radius: 8px;
+      border-left: 3px solid #00d4ff;
+      font-weight: 600;
+      color: #1a1a2e;
+      text-align: center;
+    }
+
+    .course-display span {
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+      margin-top: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 212, 255, 0.5);
+    }
+
+    .submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+    }
+
+    .form-note strong {
+      color: #00d4ff;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      text-align: center;
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Why Enroll Section */
+    .why-enroll {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(107, 92, 255, 0.08) 100%);
+      padding: 3rem;
+      border-radius: 16px;
+      margin-top: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    .why-enroll h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(100, 200, 255, 0.1);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    footer p {
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-section {
+        position: static;
+        top: auto;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+
+      .benefits-section,
+      .form-section {
+        padding: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .benefits-section,
+      .form-section {
+        padding: 1.5rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand">🚀 NexusSkillAcademy</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Start Your Learning Journey</h1>
+      <p>Join 500+ students transforming their careers. Limited spots available at current pricing.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Benefits Section -->
+      <section class="benefits-section">
+        <h2>Why Choose This Course?</h2>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">👨‍🏫</div>
+          <div class="benefit-text">
+            <h3>Expert Instructors</h3>
+            <p>Learn from industry professionals with 5-15+ years of real-world experience.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <div class="benefit-text">
+            <h3>Practical Projects</h3>
+            <p>Build portfolio-ready projects that showcase your skills to employers.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">🌍</div>
+          <div class="benefit-text">
+            <h3>Career Support</h3>
+            <p>Get resume reviews, interview prep, and job placement assistance.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">♾️</div>
+          <div class="benefit-text">
+            <h3>Lifetime Access</h3>
+            <p>Enroll once, access all materials and updates forever.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">👥</div>
+          <div class="benefit-text">
+            <h3>Community Support</h3>
+            <p>Join an active Discord community with live Q&A and networking.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-text">
+            <h3>Money-Back Guarantee</h3>
+            <p>30-day money-back guarantee if not 100% satisfied.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Section -->
+      <section class="form-section">
+        <h2>Complete Your Enrollment</h2>
+        <p class="form-subtitle">✓ Quick & Secure Registration</p>
+
+        <div class="success-message" id="successMessage">
+          <h3>🎉 Enrollment Successful!</h3>
+          <p>Check your email and WhatsApp for next steps. Our team will contact you shortly.</p>
+        </div>
+
+        <form id="enrollForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your.email@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" placeholder="+92 300 1234567" required>
+          </div>
+
+          <div class="form-group">
+            <label>Selected Course</label>
+            <div class="course-display">
+              Course: <span id="courseDisplay">Loading...</span>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">🚀 Enroll Now</button>
+
+          <p class="form-note">
+            By enrolling, you agree to our terms. <strong>We'll contact you on WhatsApp within 24 hours.</strong>
+          </p>
+        </form>
+      </section>
+    </div>
+
+    <!-- Why Enroll Section -->
+    <section class="why-enroll">
+      <h2>What You'll Get</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Complete Curriculum</h3>
+          <p>Comprehensive course materials covering everything from basics to advanced.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎥</div>
+          <h3>Video Lessons</h3>
+          <p>30+ hours of high-quality video content available 24/7.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Projects</h3>
+          <p>Real-world projects to build your professional portfolio.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>Live Support</h3>
+          <p>Weekly Q&A sessions and direct access to instructors.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Certification</h3>
+          <p>Industry-recognized certificate upon completion.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Community</h3>
+          <p>Connect with peers, share projects, and network globally.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NexusSkillAcademy. All rights reserved. | Premium Online Courses | Transform Your Career</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const courseName = params.get("course") || "Web Development";
+    document.getElementById("courseDisplay").textContent = courseName;
+
+    const enrollForm = document.getElementById("enrollForm");
+    const successMessage = document.getElementById("successMessage");
+
+    enrollForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+
+      // Show success message
+      successMessage.classList.add("show");
+
+      // Clear form
+      enrollForm.reset();
+
+      // Log enrollment data (In real scenario, send to backend)
+      console.log({
+        fullName,
+        email,
+        whatsapp,
+        course: courseName,
+        enrollmentDate: new Date().toLocaleString(),
+      });
+
+      // Optionally reset form visibility
+      setTimeout(() => {
+        // You can redirect or do other actions here
+        window.scrollTo(0, 0);
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
