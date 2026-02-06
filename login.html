@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | NexusSkillAcademy - Access Your Learning Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 480px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #00d4ff 0%, #6b5cff 50%, #ff006e 100%);
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      color: #666;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00d4ff;
+      font-size: 1.2rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s;
+      background: #fafbff;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+    }
+
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+
+    .forgot-password a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .forgot-password a:hover {
+      color: #6b5cff;
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 1.3rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+      margin-top: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 212, 255, 0.5);
+    }
+
+    .login-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      text-align: center;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .divider::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+
+    .divider span {
+      background: white;
+      padding: 0 1rem;
+      position: relative;
+      color: #999;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .signup-link p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .signup-link a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .signup-link a:hover {
+      color: #6b5cff;
+      text-decoration: underline;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .back-home a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .back-home a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+      border: 2px solid #22c55e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: none;
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message h3 {
+      color: #22c55e;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-message p {
+      color: #15803d;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 2rem 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .brand-name {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logo-section">
+      <img src="logo.png" alt="NexusSkillAcademy Logo" class="logo">
+      <div class="brand-name">NexusSkillAcademy</div>
+      <div class="tagline">Transform Your Future</div>
+    </div>
+
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Login to access your learning dashboard</p>
+
+    <div class="success-message" id="successMessage">
+      <h3>✅ Login Successful!</h3>
+      <p>Redirecting to your dashboard...</p>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <span class="input-icon">📧</span>
+          <input type="email" id="email" placeholder="your.email@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="forgot-password">
+          <a href="#forgot">Forgot Password?</a>
+        </div>
+      </div>
+
+      <button type="submit" class="login-btn">🚀 Login</button>
+    </form>
+
+    <div class="signup-link">
+      <p>Don't have an account? <a href="enroll.html">Create Account</a></p>
+    </div>
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const successMessage = document.getElementById('successMessage');
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Show success message
+      successMessage.classList.add('show');
+      loginForm.style.display = 'none';
+
+      // Log login attempt (In production, this would authenticate with backend)
+      console.log({
+        email: email,
+        loginTime: new Date().toLocaleString()
+      });
+
+      // Simulate redirect to dashboard
+      setTimeout(() => {
+        alert('Welcome back! Your dashboard would load here.');
+        window.location.href = 'index.html';
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>

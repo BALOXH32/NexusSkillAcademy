@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Courses | NexusSkillAcademy - PKR 999 Per Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 50%, #f0f4ff 100%);
+      background-attachment: fixed;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      padding: 1rem 2rem;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+    }
+    .nav-brand-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+    .nav-logo { width: 50px; height: 50px; filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.3)); }
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 0.5rem; }
+    nav a {
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.08);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      padding: 70px 2rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .hero p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    .courses-section { padding: 5rem 0; }
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 3rem;
+    }
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s;
+      border: 1px solid rgba(100, 200, 255, 0.1);
+    }
+    .course-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(0, 212, 255, 0.25);
+      border-color: rgba(0, 212, 255, 0.4);
+    }
+    .course-image-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .course-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .course-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.75) 0%, rgba(107, 92, 255, 0.75) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .course-icon-large {
+      font-size: 5rem;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+    .course-badge {
+      background: rgba(255, 255, 255, 0.95);
+      color: #00d4ff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .course-content {
+      padding: 2rem;
+    }
+    .course-card h2 {
+      font-size: 1.8rem;
+      color: #1a1a2e;
+      margin-bottom: 0.8rem;
+      font-weight: 800;
+    }
+    .course-tagline {
+      color: #00d4ff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .course-description {
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    .course-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(107, 92, 255, 0.05) 100%);
+      border-radius: 12px;
+    }
+    .detail-item { text-align: center; }
+    .detail-label {
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .detail-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .course-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .course-features li {
+      padding: 0.8rem;
+      padding-left: 2.5rem;
+      position: relative;
+      color: #444;
+      background: rgba(0, 212, 255, 0.03);
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+      border-left: 2px solid #00d4ff;
+    }
+    .course-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .course-btn {
+      display: block;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      color: white;
+      padding: 1.2rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    }
+    .course-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 212, 255, 0.5);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .course-details { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand-container">
+      <img src="logo.png" alt="Logo" class="nav-logo">
+      <span class="nav-brand">NexusSkillAcademy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="courses.html">📚 Courses</a>
+      <a href="enroll.html">🎓 Enroll</a>
+      <a href="login.html">🔐 Login</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Premium Online Courses</h1>
+    <p>Transform your career with world-class education - Only PKR 999 per course!</p>
+  </section>
+
+  <div class="container">
+    <section class="courses-section">
+      <h2 class="section-title">Choose Your Path to Success</h2>
+      <p class="section-subtitle">All courses include lifetime access, 3 real-time projects, and certification</p>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=220&fit=crop" alt="Web Development" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🌐</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>Web Development</h2>
+            <div class="course-tagline">Master Full-Stack Development</div>
+            <p class="course-description">Build modern websites and applications using HTML, CSS, JavaScript, React, Node.js and more.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">6 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">5</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-web.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=220&fit=crop" alt="AI Automation" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🤖</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>AI Automation</h2>
+            <div class="course-tagline">Automate with AI Tools</div>
+            <p class="course-description">Master ChatGPT, MidJourney, Zapier and cutting-edge AI tools for business automation.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">4</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-ai.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=220&fit=crop" alt="AI Creative Ads" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🎨</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>AI Creative Ads</h2>
+            <div class="course-tagline">Design High-Converting Ads</div>
+            <p class="course-description">Create stunning, conversion-optimized ads using AI design tools and copywriting techniques.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">6</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-ai-ads.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop" alt="Digital Marketing" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📱</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>Digital Marketing</h2>
+            <div class="course-tagline">Master Online Marketing</div>
+            <p class="course-description">Complete SEO, SEM, Social Media, Email Marketing and Analytics course for real results.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">6</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-digital.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=220&fit=crop" alt="Shopify & Dropshipping" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🛍️</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>Shopify & Dropshipping</h2>
+            <div class="course-tagline">Build Profitable Stores</div>
+            <p class="course-description">Launch and scale 6-figure ecommerce stores with Shopify and dropshipping strategies.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">3</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-shopify.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=220&fit=crop" alt="Freelancing Mastery" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">💼</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>Freelancing Mastery</h2>
+            <div class="course-tagline">Build Freelance Empire</div>
+            <p class="course-description">Learn to land high-paying clients and build a 6-figure freelance business from home.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">4</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-freelance.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=220&fit=crop" alt="YouTube Automation" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📹</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>YouTube Automation</h2>
+            <div class="course-tagline">Passive Income Streams</div>
+            <p class="course-description">Build faceless YouTube channels with AI automation and earn passive income.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">2</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-youtube.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=220&fit=crop" alt="WordPress Development" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📝</span>
+              <span class="course-badge">PKR 999</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h2>WordPress Development</h2>
+            <div class="course-tagline">Professional Websites</div>
+            <p class="course-description">Master WordPress, plugins, themes to build stunning client websites and agencies.</p>
+            <div class="course-details">
+              <div class="detail-item">
+                <div class="detail-label">Duration</div>
+                <div class="detail-value">3 Months</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Projects</div>
+                <div class="detail-value">5</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Real-Time</div>
+                <div class="detail-value">3</div>
+              </div>
+            </div>
+            <ul class="course-features">
+              <li>Expert Instructor with 5-18+ Years Experience</li>
+              <li>Lifetime Access & Updates</li>
+              <li>Certificate of Completion</li>
+            </ul>
+            <a href="course-wordpress.html" class="course-btn">View Full Course Details →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 NexusSkillAcademy. All rights reserved.<br>
+    8 Premium Courses | PKR 999 Per Course | 99 Scholarships Available | Made in Pakistan 🇵🇰</p>
+  </footer>
+
+</body>
+</html>

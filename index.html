@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NexusSkillAcademy - Learn In-Demand Skills & Get Certified | 99 Scholarships Available</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 50%, #f0f4ff 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      padding: 1rem 2rem;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 50px;
+      height: 50px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.3));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .login-btn {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      color: white !important;
+      padding: 0.7rem 1.5rem !important;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    .login-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      padding: 100px 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scholarship-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 1.3rem 2.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: white;
+      color: #00d4ff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-5px);
+    }
+
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 5rem 2rem;
+      background: white;
+    }
+
+    .features-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(107, 92, 255, 0.08) 100%);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15);
+      border-color: #00d4ff;
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .feature-card p {
+      color: #555;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* Courses Preview - ENHANCED WITH IMAGES */
+    .courses-preview {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #f0f4ff 0%, #fafbff 100%);
+    }
+
+    .courses-preview-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .course-preview-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(100, 200, 255, 0.1);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .course-preview-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(0, 212, 255, 0.25);
+      border-color: rgba(0, 212, 255, 0.4);
+    }
+
+    .course-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      position: relative;
+    }
+
+    .course-image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.7) 0%, rgba(107, 92, 255, 0.7) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .course-icon-large {
+      font-size: 5rem;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .course-content {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .course-preview-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0.8rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .course-preview-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(107, 92, 255, 0.05) 100%);
+      border-radius: 10px;
+    }
+
+    .course-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #00d4ff;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .course-price {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .course-link {
+      display: inline-block;
+      width: 100%;
+      color: white;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 1.2rem 2rem;
+      border-radius: 10px;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .course-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Trust Section */
+    .trust-section {
+      padding: 5rem 2rem;
+      background: white;
+    }
+
+    .trust-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .trust-badge {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(107, 92, 255, 0.05) 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(0, 212, 255, 0.1);
+      transition: all 0.3s;
+    }
+
+    .trust-badge:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+    }
+
+    .trust-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .trust-badge h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #1a1a2e;
+      font-weight: 800;
+    }
+
+    .trust-badge p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #f0f4ff 0%, #fafbff 100%);
+    }
+
+    .testimonials-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(100, 200, 255, 0.1);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 6rem;
+      color: rgba(0, 212, 255, 0.15);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(0, 212, 255, 0.15);
+    }
+
+    .testimonial-text {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: white;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .author-info p {
+      color: #00d4ff;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .rating {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-section p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    footer p {
+      opacity: 0.9;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .tagline { font-size: 1.2rem; }
+      .hero-description { font-size: 1rem; }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+      .section-title { font-size: 2.2rem; }
+      .features-grid,
+      .courses-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-section h2 { font-size: 2rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-logo {
+        width: 40px;
+        height: 40px;
+      }
+      .nav-brand { font-size: 1.2rem; }
+      .scholarship-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand-container">
+      <img src="logo.png" alt="NexusSkillAcademy Logo" class="nav-logo">
+      <span class="nav-brand">NexusSkillAcademy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">🏠 Home</a>
+      <a href="courses.html">📚 Courses</a>
+      <a href="enroll.html">🎓 Enroll</a>
+      <a href="login.html" class="login-btn">🔐 Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="scholarship-badge">
+        🎓 99 SCHOLARSHIPS AVAILABLE - Limited Time Only!
+      </div>
+      
+      <h1>Transform Your Future</h1>
+      
+      <p class="tagline">
+        Learn in-demand skills, get certified, and unlock global opportunities with just PKR 999 one-time enrollment!
+      </p>
+
+      <p class="hero-description">
+        Nexus Skill Academy empowers students with in-demand digital skills and provides credible certification for a minimal fee. Our courses are designed to help learners land jobs, start freelancing, and unlock global opportunities, turning learning into real-world success.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="courses.html" class="btn btn-primary">📚 Explore Courses</a>
+        <a href="enroll.html" class="btn btn-secondary">🚀 Get Started Now</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Active Students</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Professional Courses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Real-Time Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4.9★</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">89%</div>
+          <div class="stat-label">Job Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-content">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <p class="section-subtitle">Join thousands of successful learners transforming their careers</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3>Expert Instructors</h3>
+          <p>Learn from industry professionals with 5-18+ years of real-world experience in their fields.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>3 Real-Time Projects</h3>
+          <p>Build 3 world-class real-time projects for your portfolio that impress employers and clients globally.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Recognized Certificates</h3>
+          <p>Earn industry-recognized certifications that boost your credibility and career prospects.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">♾️</div>
+          <h3>Lifetime Access</h3>
+          <p>Enroll once for just PKR 999 and access all course materials, updates, and new content forever.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Global Community</h3>
+          <p>Connect with peers worldwide, share projects, and network with like-minded learners.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Affordable & Transparent</h3>
+          <p>Complete course for just PKR 999 one-time fee. 30-day money-back guarantee. No hidden costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Preview WITH IMAGES -->
+  <section class="courses-preview">
+    <div class="courses-preview-content">
+      <h2 class="section-title">Our Premium Courses</h2>
+      <p class="section-subtitle">Professional training for just PKR 999 per course - One-time enrollment fee!</p>
+
+      <div class="courses-grid">
+        <!-- Web Development -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop" alt="Web Development" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🌐</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Web Development</h3>
+            <p>Build modern, responsive websites and applications</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 6 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-web.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- AI Automation -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="AI Automation" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🤖</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>AI Automation</h3>
+            <p>Master AI tools for business automation</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-ai.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- AI Creative Ads -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=200&fit=crop" alt="AI Creative Ads" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🎨</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>AI Creative Ads</h3>
+            <p>Create stunning ads using AI technology</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-ai-ads.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Digital Marketing" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📱</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Digital Marketing</h3>
+            <p>Drive results with modern digital strategies</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-digital.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- Shopify & Dropshipping -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="Shopify" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">🛍️</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Shopify & Dropshipping</h3>
+            <p>Launch your own profitable ecommerce store</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-shopify.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- Freelancing Mastery -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop" alt="Freelancing" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">💼</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Freelancing Mastery</h3>
+            <p>Build a successful freelance career</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-freelance.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- YouTube Automation -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=200&fit=crop" alt="YouTube" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📹</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>YouTube Automation</h3>
+            <p>Create passive income with automated YouTube channels</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-youtube.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+
+        <!-- WordPress Development -->
+        <div class="course-preview-card">
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=200&fit=crop" alt="WordPress" class="course-image" onerror="this.style.display='none'">
+            <div class="course-image-overlay">
+              <span class="course-icon-large">📝</span>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>WordPress Development</h3>
+            <p>Build powerful websites with WordPress</p>
+            <div class="course-meta">
+              <span class="course-duration">⏱️ 3 Months</span>
+              <span class="course-price">PKR 999</span>
+            </div>
+            <a href="course-wordpress.html" class="course-link">View Course Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="courses.html" class="btn btn-primary" style="box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);">View All Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="trust-section">
+    <div class="trust-content">
+      <div class="trust-badge">
+        <div class="trust-icon">✅</div>
+        <h3>Quality Assured</h3>
+        <p>Carefully curated curriculum by industry experts with proven track records</p>
+      </div>
+
+      <div class="trust-badge">
+        <div class="trust-icon">🔒</div>
+        <h3>Secure & Private</h3>
+        <p>Your data and privacy are our top priority with encrypted transactions</p>
+      </div>
+
+      <div class="trust-badge">
+        <div class="trust-icon">⚡</div>
+        <h3>Fast Support</h3>
+        <p>Get answers within 24 hours from our dedicated support team</p>
+      </div>
+
+      <div class="trust-badge">
+        <div class="trust-icon">🎓</div>
+        <h3>Career Support</h3>
+        <p>Resume review, interview prep, job placement help, and career guidance</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonials-content">
+      <h2 class="section-title">What Our Students Say</h2>
+      <p class="section-subtitle">Real success stories from our Pakistan & global community</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "NexusSkillAcademy transformed my career completely. The Web Development course equipped me with practical skills that landed me a high-paying remote job within 3 months of completion. The real-time projects were invaluable for building my portfolio. Best investment I've ever made at just PKR 999!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div class="author-info">
+              <h4>Ahmed Khan</h4>
+              <p>Full-Stack Developer, Karachi</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The AI Automation course opened up a whole new world of opportunities for me. I went from working a 9-5 office job to running my own automation consulting business. The instructors were phenomenal, and the hands-on approach made complex concepts easy to understand. Highly recommend to anyone looking to future-proof their career!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">FA</div>
+            <div class="author-info">
+              <h4>Fatima Ali</h4>
+              <p>AI Automation Consultant, Lahore</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I was skeptical about online learning at first, but NexusSkillAcademy exceeded all my expectations. The Digital Marketing course gave me the exact skills I needed to grow my startup. Within 4 months, our online sales increased by 350%! The community support and lifetime access make it worth every rupee."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">UM</div>
+            <div class="author-info">
+              <h4>Usman Malik</h4>
+              <p>Startup Founder, Islamabad</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The Freelancing Mastery course changed my life! I learned how to find high-quality clients, negotiate rates, and build a sustainable freelance business. Now I'm earning 5x my previous salary while working from anywhere in Pakistan. The instructor's real-world experience really shows in every lesson. Absolutely worth it!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div class="author-info">
+              <h4>Sara Khan</h4>
+              <p>Freelance Designer, Multan</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Best decision I made this year! The Shopify & Dropshipping course taught me everything from product research to scaling. I launched my first store last month and I'm already hitting consistent 6-figure sales. The step-by-step guidance and real case studies made all the difference. Can't thank the team enough!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">BJ</div>
+            <div class="author-info">
+              <h4>Bilal Javed</h4>
+              <p>E-commerce Entrepreneur, Faisalabad</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "As someone who had zero technical background, I was nervous about the WordPress Development course. But the instructors made everything so easy to understand! Now I'm building professional websites for clients and earning a great income. The lifetime access means I can always go back and refresh my knowledge. Simply amazing!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NP</div>
+            <div class="author-info">
+              <h4>Nida Patel</h4>
+              <p>WordPress Developer, Hyderabad</p>
+            </div>
+          </div>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Start Learning?</h2>
+      <p>Join 500+ successful students who have transformed their careers. Only PKR 999 for complete access. 99 scholarships available - Don't miss out!</p>
+      <a href="courses.html" class="btn btn-primary">🚀 Explore Courses Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NexusSkillAcademy. All rights reserved.<br>
+    8 Premium Courses | PKR 999 One-Time Fee | 99 Scholarships Available<br>
+    Transform Your Career Today | Made in Pakistan 🇵🇰</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify & Dropshipping | NexusSkillAcademy - PKR 999 Only</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 50%, #f0f4ff 100%);
+      background-attachment: fixed;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      padding: 1rem 2rem;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+    }
+    .nav-brand-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+    .nav-logo { width: 45px; height: 45px; }
+    .nav-brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 0.5rem; }
+    nav a {
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.08);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 25%, #6b5cff 75%, #ff006e 100%);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      color: white;
+      padding: 80px 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+    .course-icon-hero {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Overview */
+    .overview {
+      background: white;
+      padding: 50px 3rem;
+      margin-top: -40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    .overview p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #444;
+      line-height: 1.9;
+    }
+
+    /* Details Grid */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .detail-card {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(107, 92, 255, 0.08) 100%);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .detail-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+    }
+    .detail-card h3 {
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .detail-card p {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Content Section */
+    .content-section {
+      background: white;
+      padding: 4rem 3rem;
+      margin: 3rem 0;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+    .content-section h2 {
+      color: #1a1a2e;
+      margin-bottom: 2.5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .content-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .content-list li {
+      padding: 1.3rem;
+      padding-left: 3rem;
+      position: relative;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(107, 92, 255, 0.05) 100%);
+      border-radius: 8px;
+      border-left: 3px solid #00d4ff;
+      transition: all 0.3s;
+    }
+    .content-list li:hover {
+      transform: translateX(8px);
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(107, 92, 255, 0.1) 100%);
+    }
+    .content-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      color: #00d4ff;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: linear-gradient(135deg, #00d4ff 0%, #6b5cff 100%);
+      padding: 4rem 3rem;
+      border-radius: 16px;
+      text-align: center;
+      color: white;
+      margin: 3rem 0;
+    }
+    .cta-box h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+    .price-tag {
+      font-size: 4rem;
+      font-weight: 800;
+      margin: 1.5rem 0;
+    }
+    .price-note {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    .enroll-btn {
+      display: inline-block;
+      background: white;
+      color: #00d4ff;
+      padding: 1.3rem 3rem;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .enroll-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .details-grid { grid-template-columns: 1fr; }
+      .content-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand-container">
+      <img src="logo.png" alt="Logo" class="nav-logo">
+      <span class="nav-brand">NexusSkillAcademy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="enroll.html?course=Shopify & Dropshipping">Enroll</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="course-icon-hero">🛍️</span>
+      <h1>Shopify & Dropshipping</h1>
+      <p class="hero-subtitle">Build Profitable Stores</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Overview -->
+    <section class="overview">
+      <p>Launch and scale 6-figure ecommerce stores with Shopify. Master product research, supplier sourcing, marketing, and store optimization.</p>
+      
+      <div class="details-grid">
+        <div class="detail-card">
+          <h3>Duration</h3>
+          <p>3 Months</p>
+        </div>
+        <div class="detail-card">
+          <h3>Price</h3>
+          <p>PKR 999</p>
+        </div>
+        <div class="detail-card">
+          <h3>Projects</h3>
+          <p>3</p>
+        </div>
+        <div class="detail-card">
+          <h3>Real-Time Projects</h3>
+          <p>3</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(107, 92, 255, 0.08) 100%); border-radius: 12px;">
+        <p style="font-size: 1.1rem; color: #1a1a2e; margin-bottom: 0.8rem;"><strong>Lead Instructor:</strong> E-Commerce Expert</p>
+        <p style="color: #00d4ff; font-weight: 700;">10+ Years Shopify & Dropshipping</p>
+      </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="content-section">
+      <h2>What You'll Learn</h2>
+      <ul class="content-list">
+        <li>Industry-standard tools and techniques</li>
+        <li>Hands-on real-world projects</li>
+        <li>Portfolio-building exercises</li>
+        <li>Professional certification upon completion</li>
+        <li>Lifetime access to course materials</li>
+        <li>Community support and networking</li>
+        <li>Job placement assistance</li>
+        <li>Weekly live Q&A sessions</li>
+      </ul>
+    </section>
+
+    <!-- Course Features -->
+    <section class="content-section">
+      <h2>Course Features</h2>
+      <ul class="content-list">
+        <li>30+ Hours of HD video content</li>
+        <li>3 Real-time global projects</li>
+        <li>Downloadable resources and templates</li>
+        <li>Certificate of completion</li>
+        <li>Access to private Discord community</li>
+        <li>One-on-one mentorship sessions</li>
+        <li>30-day money-back guarantee</li>
+        <li>Lifetime updates and new content</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-box">
+      <h2>Ready to Transform Your Career?</h2>
+      <div class="price-tag">PKR 999</div>
+      <p class="price-note">One-time enrollment fee | Lifetime Access | 99 Scholarships Available</p>
+      <a href="enroll.html?course=Shopify & Dropshipping" class="enroll-btn">🚀 ENROLL NOW</a>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NexusSkillAcademy. All rights reserved. | Premium Course - PKR 999 | Transform Your Future</p>
+  </footer>
+
+</body>
+</html>
